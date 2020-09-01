@@ -1,0 +1,32 @@
+body{
+	background-color: steelblue;
+	margin: 10% auto;
+	text-align: center;
+}
+
+#input {
+	margin: auto;
+}
+
+button {
+	font-size: 20px;
+}
+
+#search {
+	width: 20%;
+	height: 20px;
+}
+
+.imageContainer{
+	margin-top: 20px;
+}
+
+.responsive{
+	width: 100%;
+	max-width: 700px;
+	height: auto;
+	margin: 0.5% 0;
+	border: 2px solid green;
+	border-radius: 15px;
+
+}
