@@ -1,6 +1,6 @@
-body{
-	background-color: steelblue;
-	margin: 10% auto;
+body {
+	/*	background-color: steelblue;*/
+	margin: 0;
 	text-align: center;
 }
 
@@ -17,7 +17,8 @@ button {
 	height: 20px;
 }
 
-.imageContainer{
+.imageContainer {
+	padding-top:20px;
 	margin-top: 20px;
 	display: flex;
 	flex-direction: row;
@@ -25,7 +26,7 @@ button {
 	justify-content: center;
 }
 
-.responsive{
+.responsive {
 	width: 100%;
 	max-width: 300px;
 	height: auto;
@@ -34,7 +35,6 @@ button {
 	border: 2px solid green;
 	border-radius: 15px;
 	margin: 0 0;
-
 }
 
 .notification {
@@ -43,15 +43,15 @@ button {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 300px;
-  border-radius: 5px;
-  margin: 5px 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 300px;
+	border-radius: 5px;
+	margin: 5px 5px;
 }
 
 .card-text {
-/*	background: green;*/
+	/*	background: green;*/
 	margin: 0 0;
 	padding: 5px 0;
 }
@@ -61,32 +61,45 @@ button {
 	padding: 5px;
 	width: 100%;
 	font-size: 1.5rem;
-	color: #FFF;
+	color: #fff;
 	text-transform: uppercase;
 }
 
-
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	margin-top: 0;
+	margin-bottom: 20px;
+	width: 100%;
 }
 
 li {
-  float: left;
+	float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 10px;
+	text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
-.active, li a:hover {
-  background-color: red;
+.active,
+li a:hover {
+	background-color: red;
+}
+
+a:active {
+	background-color: green;
+}
+
+
+#input {
+	padding-top: 5%;
 }

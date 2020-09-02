@@ -2,10 +2,13 @@ let imageUrl = [];
 let imageName = [];
 const imageContainer = document.querySelector(".imageContainer");
 const navUl = document.querySelector("#navUl");
-const navLi = document.querySelectorAll("li");
+const navLi = document.querySelectorAll("#navUl > li");
 const mainBody = document.querySelector("#main-body");
 let message = document.querySelector(".notification");
+let cats = document.querySelector("#Dogs")
 
+
+smoothScroling()
 // Searching for photos from unsplash
 const searchPhotos = () => {
 	// imageContainer.innerHTML = "";
@@ -75,15 +78,6 @@ function isInViewport(elem) {
 // 	})
 // })
 
-function createSection() {
-	let newSection = `<section class="imageContainer">
-					 	<h3 class="section-heading">New Section</h3>
-					 `;
-	mainBody.innerHTML += newSection;
-	console.log("New Section has been added");
-}
-
-
 function showMessage(term) {
 		message.innerHTML = `Images of ${term} has been added!!`;
 		setTimeout(function () {
@@ -93,6 +87,50 @@ function showMessage(term) {
 
 
 function addNavigation(term) {
-	let newLi = `<li><a href="${term}">${term}</a></li>`
+	let newLi = `<li><a href="#${term}">${term}</a></li>`
 	navUl.innerHTML += newLi;
+	// scrollToSection(newLi);
+	console.log(newLi)
+	// smoothScroling();
 }
+
+function clickingTest(e){
+	console.log(e)
+	cats.scrollIntoView({behavior: "smooth", block:"start", inline: "center"})
+}
+
+
+//Currently Works at Start but goes back to default behaviour of clicking once new Li is added.
+
+function smoothScroling() {
+	navLi.forEach(li=> {
+		li.addEventListener("click", function(e) {
+			//Preventing default clicking behaviour
+			e.preventDefault()
+
+			// Selecting the appropriate list item
+			let liSelector = document.querySelector(`#${li.textContent}`)
+
+			// Smooth scrolling to the appropriate section
+			liSelector.scrollIntoView({behavior: "smooth", block:"start", inline: "center"})
+		})
+		// console.log(li)
+	})
+}
+
+// function scrollToSection(li) {
+// 	li.addEventListener("click", function (e) {
+// 		//Preventing default clicking behaviour
+// 		e.preventDefault();
+
+// 		// Selecting the appropriate list item
+// 		let liSelector = document.querySelector(`#${li.textContent}`);
+
+// 		// Smooth scrolling to the appropriate section
+// 		liSelector.scrollIntoView({
+// 			behavior: "smooth",
+// 			block: "start",
+// 			inline: "center",
+// 		});
+// 	});
+// }
