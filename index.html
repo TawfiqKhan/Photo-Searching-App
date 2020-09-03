@@ -5,27 +5,27 @@
 		<title>Phto Searching App</title>
 	</head>
 	<body>
-		<nav>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<nav id="navigation">
 			<ul id="navUl">
+				<li><a href="#">Home</a></li>
 				<li><a href="#Soccer">Soccer</a></li>
 				<li><a href="#Dogs">Dogs</a></li>
 				<li><a href="#Cats">Cats</a></li>
 			</ul>
 		</nav>
+
 		<main id="main-body">
 			<div id="input">
-				<h2 class="notification">message will display here</h2>
+				<h2 id="notification"></h2>
 				<input
 					type="text"
 					id="search"
 					name="search-photos"
 					placeholder="Search for a Photo"
 				/>
-				<button onclick="searchPhotos()">Search for Photos</button>
-				<button onclick="clickingTest()">Scrolling Check</button>
-				<button onclick="smoothScroling()">Test Event</button>
+				<button class="btn" onclick="searchPhotos()">Search for Photos</button>
 		</div>
-
 			<section id="Soccer" class="imageContainer">
 				<h3 class="section-heading">Soccer</h3>
 				<div class="card">
@@ -135,6 +135,9 @@
 				</div>
 			</section>
 		</main>
+			<footer>
+				<p>Created by, Md Tawfiqul Hasan Khan</p>
+			</footer>
 
 		<script src="js/app.js"></script>
 	</body>
