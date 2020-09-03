@@ -2,7 +2,7 @@ let imageUrl = [];
 let imageName = [];
 const imageContainer = document.querySelector(".imageContainer");
 const navUl = document.querySelector("#navUl");
-const navLi = document.querySelectorAll("#navUl > li");
+// const navLi = document.querySelectorAll("#navUl > li");
 const mainBody = document.querySelector("#main-body");
 let message = document.querySelector(".notification");
 let cats = document.querySelector("#Dogs")
@@ -10,6 +10,22 @@ let cats = document.querySelector("#Dogs")
 
 smoothScroling()
 // Searching for photos from unsplash
+
+
+//Things that are done
+
+// Dynamic section adding via search for photos
+// clicking on navigation link on the nav bar makes it smooth scrolling to the section
+
+// Newly created section has smooth scrolling added to them, but when a new section is added,
+//forEach loop runs for all of the lis again, this maybe optimized
+
+// Things left to do.....
+// back to top button  appearing when scrolling down
+// highlighing section when it is in viewport(using add/remove classlist)
+
+
+
 const searchPhotos = () => {
 	// imageContainer.innerHTML = "";
 	const input = document.querySelector("#search");
@@ -89,9 +105,8 @@ function showMessage(term) {
 function addNavigation(term) {
 	let newLi = `<li><a href="#${term}">${term}</a></li>`
 	navUl.innerHTML += newLi;
-	// scrollToSection(newLi);
-	console.log(newLi)
-	// smoothScroling();
+
+	smoothScroling()
 }
 
 function clickingTest(e){
@@ -100,37 +115,29 @@ function clickingTest(e){
 }
 
 
-//Currently Works at Start but goes back to default behaviour of clicking once new Li is added.
-
 function smoothScroling() {
+	let navLi = document.querySelectorAll("#navUl > li");
 	navLi.forEach(li=> {
-		li.addEventListener("click", function(e) {
-			//Preventing default clicking behaviour
-			e.preventDefault()
-
-			// Selecting the appropriate list item
-			let liSelector = document.querySelector(`#${li.textContent}`)
-
-			// Smooth scrolling to the appropriate section
-			liSelector.scrollIntoView({behavior: "smooth", block:"start", inline: "center"})
-		})
-		// console.log(li)
-	})
+		console.log(typeof(li))
+		addScrolling(li)
+	}
+	)
 }
 
-// function scrollToSection(li) {
-// 	li.addEventListener("click", function (e) {
-// 		//Preventing default clicking behaviour
-// 		e.preventDefault();
+function addScrolling(li) {
+	li.addEventListener("click", function (e) {
+		//Preventing default clicking behaviour
+		e.preventDefault();
+		// console.log(typeof(li))
 
-// 		// Selecting the appropriate list item
-// 		let liSelector = document.querySelector(`#${li.textContent}`);
+		// Selecting the appropriate list item
+		let liSelector = document.querySelector(`#${li.textContent}`);
 
-// 		// Smooth scrolling to the appropriate section
-// 		liSelector.scrollIntoView({
-// 			behavior: "smooth",
-// 			block: "start",
-// 			inline: "center",
-// 		});
-// 	});
-// }
+		// Smooth scrolling to the appropriate section
+		liSelector.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+			inline: "center",
+		});
+	});
+}
