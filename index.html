@@ -5,28 +5,35 @@
 		<title>Phto Searching App</title>
 	</head>
 	<body>
-		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-		<nav id="navigation">
-			<ul id="navUl">
-				<li><a href="#">Home</a></li>
-				<li><a href="#Soccer">Soccer</a></li>
-				<li><a href="#Dogs">Dogs</a></li>
-				<li><a href="#Cats">Cats</a></li>
-			</ul>
-		</nav>
+		<header>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				Top
+			</button>
+			<nav id="navigation">
+				<ul id="navUl">
+					<li><a class="active" href="#">Home</a></li>
+					<li><a href="#Soccer">Soccer</a></li>
+					<li><a href="#Dogs">Dogs</a></li>
+					<li><a href="#Cats">Cats</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<main id="main-body">
 			<div id="input">
 				<h2 id="notification"></h2>
-				<input
-					type="text"
-					id="search"
-					name="search-photos"
-					placeholder="Search for a Photo"
-				/>
-				<button class="btn" onclick="searchPhotos()">Search for Photos</button>
-		</div>
-			<section id="Soccer" class="imageContainer">
+				<form onsubmit="searchPhotos()">
+					<input
+						type="text"
+						id="search"
+						name="search-photos"
+						placeholder="Search for a Photo"
+						required
+					/>
+					<input class="btn" type="submit" value="Search" />
+				</form>
+			</div>
+			<section id="Soccer" class="imageContainer" tabindex="0">
 				<h3 class="section-heading">Soccer</h3>
 				<div class="card">
 					<img
@@ -62,7 +69,7 @@
 				</div>
 			</section>
 
-			<section id="Dogs" class="imageContainer">
+			<section id="Dogs" class="imageContainer" tabindex="0">
 				<h3 class="section-heading">Dogs</h3>
 				<div class="card">
 					<img
@@ -98,8 +105,7 @@
 				</div>
 			</section>
 
-
-			<section id="Cats" class="imageContainer">
+			<section id="Cats" class="imageContainer" tabindex="0">
 				<h3 class="section-heading">Cats</h3>
 				<div class="card">
 					<img
@@ -135,10 +141,23 @@
 				</div>
 			</section>
 		</main>
-			<footer>
-				<p>Created by, Md Tawfiqul Hasan Khan</p>
-			</footer>
+		<footer>
+			<div class="icon-container">
+				<a href="https://github.com/special3220"
+					><i class="icons fab fa-github"></i
+				></a>
+				<a href="https://www.linkedin.com/in/tawfiqulhasankhan/"
+					><i class="icons fab fa-linkedin"></i
+				></a>
+			</div>
+
+			<p class="credit">Created by, Md Tawfiqul Hasan Khan</p>
+		</footer>
 
 		<script src="js/app.js"></script>
+		<script
+			src="https://kit.fontawesome.com/4cfb43502c.js"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
