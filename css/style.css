@@ -1,68 +1,69 @@
 @import "header.css";
+
 @import "footer.css";
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	text-align: center;
-	background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  margin: 0;
+  text-align: center;
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
 
 /*Sections containing image Container*/
 
-.imageContainer {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 50px 50px;
+.image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 50px;
 }
 
 .responsive {
-	width: 100%;
-	height: auto;
-	max-height: 200px;
-	margin: 0.5% 0;
-	border: 2px solid green;
-	border-radius: 15px;
-	margin: 0 0;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  margin: 0.5% 0;
+  border: 2px solid green;
+  border-radius: 15px;
+  margin: 0 0;
 }
 
 .card {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
-	width: 270px;
-	border-radius: 5px;
-	margin: 5px 5px;
-	background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 270px;
+  border-radius: 5px;
+  margin: 5px 5px;
+  background-color: #fff;
 }
 
 .card-text {
-	margin: 0 0;
-	padding: 5px 0;
+  margin: 0 0;
+  padding: 5px 0;
 }
 
 .section-heading {
-	background: #325755;
-	padding: 5px;
-	width: 100%;
-	font-size: 1.5rem;
-	color: #fff;
-	text-transform: uppercase;
-	margin: 0 5px;
+  background: #325755;
+  padding: 5px;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 5px;
 }
 
 #input {
-	padding-top: 5%;
+  padding-top: 5%;
 }
 
 .active-section {
-	background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*Sections containing image Container*/

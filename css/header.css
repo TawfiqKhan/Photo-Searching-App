@@ -1,43 +1,42 @@
 /*Header Section*/
 
 #input {
-	margin: auto;
+  margin: auto;
 }
 
 #search {
-	width: 20%;
-	height: 30px;
-	text-align: center;
-	font-size: 1.5vw;
+  width: 20%;
+  height: 30px;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
-
 ul {
-	list-style-type: none;
-	overflow: hidden;
-	background-color: #333;
-	position: fixed;
-	margin-top: 0;
-	width: 100%;
-	height: 50px;
-	display: flex;
-	justify-content: center;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 li a {
-	font-size: 1.25rem;
-	text-transform: uppercase;
-	display: block;
-	color: white;
-	height: 50px;
-	padding: 12px 15px;
-	text-decoration: none;
-	transition: font-size 0.3s;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: block;
+  color: white;
+  height: 50px;
+  padding: 12px 15px;
+  text-decoration: none;
+  transition: font-size 0.3s;
 }
 
 li a:hover {
-	background-color: #517337;
-	font-size: 1.4rem;
+  background-color: #517337;
+  font-size: 1.4rem;
 }
 
 /*Header Section*/
@@ -45,25 +44,25 @@ li a:hover {
 /*Search section*/
 
 #notification {
-	color: green;
-	display: inline-block;
-	width: 100%;
-	padding: 10px 10px;
-	text-align: center;
-	line-height: 20px;
-	min-height: 50px;
+  color: green;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 10px;
+  text-align: center;
+  line-height: 20px;
+  min-height: 50px;
 }
 
 .btn {
-	background-color: #d1d66b;
-	margin: 4px 2px;
-	padding: 10px 12px;
-	font-size: 1.5vw;
-	cursor: pointer;
-	text-align: center;
-	border: none;
-	color: black;
-	height: 100%;
+  background-color: #d1d66b;
+  margin: 4px 2px;
+  padding: 10px 12px;
+  font-size: 1.5vw;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  color: black;
+  height: 100%;
 }
 
 .btn:hover {

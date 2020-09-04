@@ -1,163 +1,155 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="css/style.css" />
-		<title>Phto Searching App</title>
-	</head>
-	<body>
-		<header>
-			<button onclick="topFunction()" id="myBtn" title="Go to top">
-				Top
-			</button>
-			<nav id="navigation">
-				<ul id="navUl">
-					<li><a class="active" href="#">Home</a></li>
-					<li><a href="#Soccer">Soccer</a></li>
-					<li><a href="#Dogs">Dogs</a></li>
-					<li><a href="#Cats">Cats</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<main id="main-body">
-			<div id="input">
-				<h2 id="notification"></h2>
-				<form onsubmit="searchPhotos()">
-					<input
-						type="text"
-						id="search"
-						name="search-photos"
-						placeholder="Search for a Photo"
-						required
-					/>
-					<input class="btn" type="submit" value="Search" />
-				</form>
-			</div>
-			<section id="Soccer" class="imageContainer" tabindex="0">
-				<h3 class="section-heading">Soccer</h3>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="soccer"
-					/>
-					<h3 class="card-text">Soccer</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="soccer"
-					/>
-					<h3 class="card-text">Soccer Field</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="soccer"
-					/>
-					<h3 class="card-text">Soccer Ball</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="soccer"
-					/>
-					<h3 class="card-text">Man Playing Soccer</h3>
-				</div>
-			</section>
-
-			<section id="Dogs" class="imageContainer" tabindex="0">
-				<h3 class="section-heading">Dogs</h3>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Three Brown Puppies"
-					/>
-					<h3 class="card-text">Three Brown Puppies</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Student Dog"
-					/>
-					<h3 class="card-text">Student Dog</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Cute Dog"
-					/>
-					<h3 class="card-text">Soccer Ball</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="friendly Dog"
-					/>
-					<h3 class="card-text">Man Playing Soccer</h3>
-				</div>
-			</section>
-
-			<section id="Cats" class="imageContainer" tabindex="0">
-				<h3 class="section-heading">Cats</h3>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Relaxed Cats"
-					/>
-					<h3 class="card-text">Relaxed Cats</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1570824104453-508955ab713e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Cats in a Basket"
-					/>
-					<h3 class="card-text">Cats in a Basket</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="Startled Cat"
-					/>
-					<h3 class="card-text">Startled Cat</h3>
-				</div>
-				<div class="card">
-					<img
-						class="responsive"
-						src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
-						alt="friendly Dog"
-					/>
-					<h3 class="card-text">Sleeping Cat</h3>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<div class="icon-container">
-				<a href="https://github.com/special3220"
-					><i class="icons fab fa-github"></i
-				></a>
-				<a href="https://www.linkedin.com/in/tawfiqulhasankhan/"
-					><i class="icons fab fa-linkedin"></i
-				></a>
-			</div>
-
-			<p class="credit">Created by, Md Tawfiqul Hasan Khan</p>
-		</footer>
-
-		<script src="js/app.js"></script>
-		<script
-			src="https://kit.fontawesome.com/4cfb43502c.js"
-			crossorigin="anonymous"
-		></script>
-	</body>
+   <head>
+      <link rel="stylesheet" href="css/style.css" />
+      <title>Phto Searching App</title>
+   </head>
+   <body>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+      Top
+      </button>
+      <nav id="navigation">
+         <ul id="navUl">
+            <li><a href="#">Home</a></li>
+            <li><a href="#Soccer">Soccer</a></li>
+            <li><a href="#Dogs">Dogs</a></li>
+            <li><a href="#Cats">Cats</a></li>
+         </ul>
+      </nav>
+      <main id="main-body">
+         <div id="input">
+            <h2 id="notification"></h2>
+            <form onsubmit="searchPhotos()">
+               <input
+                  type="text"
+                  id="search"
+                  name="search-photos"
+                  placeholder="Search for a Photo"
+                  />
+               <input class="btn" type="submit" value="Search">
+            </form>
+         </div>
+         <section id="Soccer" class="image-container">
+            <h3 class="section-heading">Soccer</h3>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="soccer"
+                  />
+               <h3 class="card-text">Soccer</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="soccer"
+                  />
+               <h3 class="card-text">Soccer Field</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="soccer"
+                  />
+               <h3 class="card-text">Soccer Ball</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="soccer"
+                  />
+               <h3 class="card-text">Man Playing Soccer</h3>
+            </div>
+         </section>
+         <section id="Dogs" class="image-container">
+            <h3 class="section-heading">Dogs</h3>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Three Brown Puppies"
+                  />
+               <h3 class="card-text">Three Brown Puppies</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Student Dog"
+                  />
+               <h3 class="card-text">Student Dog</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Cute Dog"
+                  />
+               <h3 class="card-text">Soccer Ball</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="friendly Dog"
+                  />
+               <h3 class="card-text">Man Playing Soccer</h3>
+            </div>
+         </section>
+         <section id="Cats" class="image-container">
+            <h3 class="section-heading">Cats</h3>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Relaxed Cats"
+                  />
+               <h3 class="card-text">Relaxed Cats</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1570824104453-508955ab713e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Cats in a Basket"
+                  />
+               <h3 class="card-text">Cats in a Basket</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="Startled Cat"
+                  />
+               <h3 class="card-text">Startled Cat</h3>
+            </div>
+            <div class="card">
+               <img
+                  class="responsive"
+                  src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1MzA2OH0"
+                  alt="friendly Dog"
+                  />
+               <h3 class="card-text">Sleeping Cat</h3>
+            </div>
+         </section>
+      </main>
+      <footer>
+         <div class="icon-container">
+            <a href="https://github.com/special3220"
+               ><i class="icons fab fa-github"></i
+               ></a>
+            <a href="https://www.linkedin.com/in/tawfiqulhasankhan/"
+               ><i class="icons fab fa-linkedin"></i
+               ></a>
+         </div>
+         <p class="credit">Created by, Md Tawfiqul Hasan Khan</p>
+      </footer>
+      <script src="js/app.js"></script>
+      <script
+         src="https://kit.fontawesome.com/4cfb43502c.js"
+         crossorigin="anonymous"
+         ></script>
+   </body>
 </html>
