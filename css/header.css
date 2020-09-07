@@ -3,15 +3,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 0;
-  margin: 0;
+  margin: 0 0;
   font-weight: 800;
+  overflow: hidden;
+}
+
+#navUl li {
+  padding: 10px;
 }
 
 #navUl li a {
   text-transform: uppercase;
   color: white;
-  padding: 12px 15px;
+  padding: 10px 10px;
+  text-align: center;
   text-decoration: none;
   transition: background-color 0.3s;
 }
@@ -21,10 +26,10 @@
 }
 
 #navUl li a:active {
-  background-color: #517337;
+  background-color: #6f94d1;
 }
 
 .current {
-  background-color: #517337;
+  background-color: #6f94d1;
   transition: background-color 1s;
 }
