@@ -4,28 +4,30 @@ footer {
   background-color: black;
   color: #fff;
   height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 20px 5px;
+  padding-bottom: 30px;
+}
+
+.icon-container {
+  margin-top: 0;
 }
 
 .icons {
   font-size: 2rem;
   color: #FFF;
-  margin: 10px 5px;
+  margin: 5px 5px;
   transition: font-size 0.3s;
 }
 
 .icons:hover {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
 }
 
 .credit {
   margin-top: 5px;
   height: 20px;
+  padding-bottom: 20px;
 }
 
 /*Footer*/

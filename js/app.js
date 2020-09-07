@@ -2,16 +2,22 @@ const navUl = document.querySelector("#navUl");
 const mainBody = document.querySelector("#main-body");
 var mybutton = document.getElementById("myBtn");
 
+const navLinks = document.querySelectorAll("#navUl li a");
+
+smoothScroling();
 const searchPhotos = () => {
     const input = document.querySelector("#search");
     let searchTerm = input.value;
     //Creating new Section based on used input in the search box
     let newSection = `<section id="${searchTerm}" class="image-container" tabindex="0">
-					 	<h3 class="section-heading">${searchTerm}</h3>
-					 `;
+                        <h3 class="section-heading">${searchTerm}</h3>
+                        <div class="card-container"></div>
+                     `;
     mainBody.innerHTML += newSection;
     // Grabbing the newly created section for later appending of child element into it
-    let createdSection = document.querySelector(`#${searchTerm}`);
+    let createdSection = document.querySelector(
+        `#${searchTerm} > .card-container`
+    );
     // Credentials for unsplash api
     let clientId = "88i7qHkpW1-r-T3rR0tk7OEwVE4KGDCJD04P_ZLyGYs";
     let url = `http://api.unsplash.com/search/photos/?client_id=${clientId}&query=${searchTerm}`;
@@ -23,14 +29,14 @@ const searchPhotos = () => {
             for (let i = 0; i < 4; i++) {
                 // From the fetched Array creating Div with image and image title in the form of h3
                 let imageDiv = `<div class="card">
-									<img
-										class = 'responsive'
-										src=${imageArray[i].urls.regular}
-										alt='${imageArray[i].alt_description}'
-										/>
-										<h3 class="card-text">${imageArray[i].alt_description}</h3>
-									</div>
-								`;
+                                    <img
+                                        class = 'responsive'
+                                        src=${imageArray[i].urls.regular}
+                                        alt='${imageArray[i].alt_description}'
+                                        />
+                                        <h3 class="card-text">${imageArray[i].alt_description}</h3>
+                                    </div>
+                                `;
 
                 createdSection.innerHTML += imageDiv;
             }
@@ -48,11 +54,16 @@ window.onscroll = function() {
     let Sections = document.querySelectorAll(".image-container");
     // looping through each section to check if they are in viewport
     Sections.forEach((section) => {
+        let sectionId = section.getAttribute("id");
+        let currentLink = document.querySelector(`.${sectionId}`);
         if (isInViewport(section)) {
             //if a section is in viewport adding active class to them
             section.classList.add("active-section");
+            // Add current class to the navmenu link as well
+            currentLink.classList.add("current");
         } else {
             section.classList.remove("active-section");
+            currentLink.classList.remove("current");
         }
     });
 };
@@ -84,10 +95,10 @@ function showMessage(term) {
 
 //function to add new link in the menu
 function addNavigation(term) {
-    let newLi = `<li><a href="#${term}">${term}</a></li>`;
+    let newLi = `<li><a class="${term}" href="#${term}">${term}</a></li>`;
     navUl.innerHTML += newLi;
+    smoothScroling();
 }
-
 
 // Function for handingling the back to top button's display
 function scrollFunction() {
@@ -102,6 +113,35 @@ function scrollFunction() {
 }
 
 function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+}
+
+
+function smoothScroling() {
+    let navLi = document.querySelectorAll("#navUl > li");
+    navLi.forEach((li) => {
+        addScrolling(li);
+    });
+}
+// Function for the smooth scrolling behaviour on click
+function addScrolling(li) {
+    li.addEventListener("click", function(e) {
+        //Preventing default clicking behaviour
+        e.preventDefault();
+        // console.log(typeof(li))
+
+        // Selecting the appropriate list item
+        let liSelector = document.querySelector(`#${li.textContent}`);
+
+        // Smooth scrolling to the appropriate section
+        liSelector.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "center",
+        });
+    });
 }
