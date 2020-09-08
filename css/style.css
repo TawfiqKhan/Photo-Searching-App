@@ -1,9 +1,6 @@
 @import "header.css";
-
 @import "footer.css";
-
 @import "image-container.css";
-
 body {
   min-width: 399px;
   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
@@ -31,7 +28,6 @@ body {
 
 #navigation {
   grid-area: nav;
-  border: 1px solid green;
   position: fixed;
   top: 0;
   left: 0;
@@ -76,7 +72,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
@@ -113,32 +109,27 @@ footer {
   background-color: #555;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .image-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "heading heading" "cards cards";
     padding-top: 10%;
   }
-
   .card-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   .card {
     width: 40%;
     margin: 1% 1%;
   }
-
   .card-text {
     font-size: 2.5vw;
   }
-
   .section-heading {
     font-size: 2.5vw;
   }
-
   #search {
     height: 3vh;
     font-size: 2vw;
@@ -146,5 +137,33 @@ footer {
   .btn {
     font-size: 2vh;
     height: 4vh;
+  }
+}
+
+@media (max-width: 280px) {
+  .image-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "heading" "cards";
+    padding-top: 15%;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 100%;
+    margin: 1% 1%;
+  }
+  .card-text {
+    font-size: 4.5vw;
+  }
+  .section-heading {
+    font-size: 6.5vw;
+  }
+  #search {
+    height: 4vh;
+    font-size: 5vw;
+    width: 50%;
   }
 }
