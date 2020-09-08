@@ -1,11 +1,12 @@
 const navUl = document.querySelector("#navUl");
+let listItems = navUl.childNodes
 const mainBody = document.querySelector("#main-body");
-var mybutton = document.getElementById("myBtn");
-
+let mybutton = document.getElementById("myBtn");
 const navLinks = document.querySelectorAll("#navUl li a");
 
 smoothScroling();
 const searchPhotos = () => {
+
     const input = document.querySelector("#search");
     let searchTerm = input.value;
     //Creating new Section based on used input in the search box
@@ -57,13 +58,27 @@ window.onscroll = function() {
         let sectionId = section.getAttribute("id");
         let currentLink = document.querySelector(`.${sectionId}`);
         if (isInViewport(section)) {
+
+            // When a section is in viewport checking whether a corresponding li exist in the nav menu
+            // if it doesnt exist then add the li in the ul.
+            let checkLi = document.querySelector(`.${sectionId}`)
+            if (!checkLi) {
+                addNavigation(sectionId)
+            }
+
             //if a section is in viewport adding active class to them
             section.classList.add("active-section");
             // Add current class to the navmenu link as well
-            currentLink.classList.add("current");
+            addActive(sectionId)
         } else {
             section.classList.remove("active-section");
-            currentLink.classList.remove("current");
+
+            // if the section is not in view then grabbing the corresponding li (if it exist )and removing the
+            // active class from that li
+            let checkLi = document.querySelector(`.${sectionId}`)
+            if (checkLi) {
+                removeActive(sectionId)
+            }
         }
     });
 };
@@ -88,7 +103,6 @@ function showMessage(term) {
     let message = document.querySelector("#notification");
     message.innerHTML = `Images of ${term} has been added!!`;
     setTimeout(function() {
-        console.log(message);
         message.innerHTML = "";
     }, 2000);
 }
@@ -144,4 +158,18 @@ function addScrolling(li) {
             inline: "center",
         });
     });
+}
+
+// Adding active class (current) the lis
+
+function addActive(term) {
+    let currentLink = document.querySelector(`.${term}`);
+    currentLink.classList.add("current");
+}
+
+// Remove active class (current) the lis
+
+function removeActive(term) {
+    let Link = document.querySelector(`.${term}`);
+    Link.classList.remove("current");
 }
